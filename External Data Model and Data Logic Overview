@@ -1,0 +1,18 @@
+External Data Model and Data Logic Overview
+Group 4 
+
+In this document we will cover the external data model and the data logic overview for the hall of fame database. As such we aim to identify the primary users of the database, any defined schemas for the database, and user interfaces. We will then move to cover the data logic and specify the details on any stored procedures, triggers, functions, and constraints.
+
+External Data Model
+The primary user group of this database will be the owners/operators/appropriate staff within the hall of fame. Since this is the case, most of the functionality pertaining to the database would remain at the administrative level, since the users who had access to the database itself would be the very same users maintaining the database. Since the primary function of the database is to function as an alert system when a player crosses the threshold for inception into the hall of fame, view creation requirements are minimal. This of course would change should the client want to expand functionality to allow for the information found in the database to be viewable/searchable on a public facing webpage. If this was the case then the database would need to be modified to allow for this functionality, primarily through the creation of schema views which could be used to view the data without any danger of them editing the data or otherwise modifying the database. 
+
+User Interfaces
+With the current configuration of the database there will be two primary user interfaces. The first being the standard interface accessible via Azure Studio or another DBMS system. This would allow for full access to the database for the use of compiling reports on players which could be published on a pre-determined basis (if desired). The other user interface would only consist only of a messaging system which would send a brief message to the appropriate staff which would alert them of the player id that became eligible for the hall of fame and what accolades or statistics that they had that qualified them for their induction. This would allow the staff to then compose the appropriate notifications for those they wanted to inform of the induction. 
+
+Stored Triggers
+There are two triggers for the database as it is currently designed. The first will generate the alert that a player is eligible for induction into the hall of fame. This will allow for the process to be automated, so as the database is updated with new information the trigger will activate once a player meets the necessary criteria. The second trigger functions as check on an additional time constraint on players, where a player must be out of the league for a minimum of 4 years before they become eligible for induction. This will make sure the player can not be considered for induction before this time limit has past. 
+
+Constraints and Rules
+(insert constraints and rules (need to do))
+This will consist of primary and foreign keys in the database and any check constraints that we have implemented.    
+
